@@ -44,7 +44,7 @@ addressType::addressType(string newaddress, string newcity,string newstate,int n
 		if (zip < 11111 || zip > 99999)
 		{
 			zipcode = 10000;
-				cout << "Zipcode is invalid" << endl;
+			cout << "Zipcode is invalid" << endl;
 		}
 
 		else
