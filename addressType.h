@@ -19,7 +19,7 @@ public:
 	//preconditions - address and city are supplied, supply state as a valiid postal abbreviation
 	//					supply zipcode as a 5-digit integer > 10000
 	// postcondition - use supplied values for address and city, validate state and zipcode
-	addressType(string= "(Your address)", string ="(Your city)", string ="XX", int = 10000);
+	addressType(string= " ", string =" ", string ="XX", int = 10000);
 
 	//precondition - supplied value is a valid postal (2 character) state abbreeviation
 	//postcondition - use the value supplied if valid, otherwise use the default ("XX")

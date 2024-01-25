@@ -7,7 +7,7 @@ using namespace std;
 void addressType::print() //must be defined in the .cpp file
 {
 	cout << address << endl;
-	cout << city << ", " << state << " " << zipcode << endl;
+	cout << city << " " << state << ", " << zipcode << endl;
 
 }
 
