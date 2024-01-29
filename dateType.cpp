@@ -1,6 +1,4 @@
 #include "dateType.h"
-#include <iostream>
-using namespace std;
 
 	dateType::dateType(int month, int day, int year)
 	{
@@ -80,9 +78,7 @@ using namespace std;
 		else
 			dYear = year;
 	}
-	//int dateType::getDay() { return dDay; }
-	//int dateType::getMonth() { return dMonth; }
-	//int dateType::getYear() { return dYear; }
+
 
 	void dateType::print()
 	{
