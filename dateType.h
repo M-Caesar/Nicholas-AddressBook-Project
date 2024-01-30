@@ -24,7 +24,7 @@ public:
 	//postcondition: Function has sucessfully assigned values if valid, and returned error message and default value if input is not valid
 	void setDate(int month, int day, int year);
 
-	//getter functions for variables
+	//getter functions for variables.
 	int getDay() { return dDay; }
 	int getMonth() { return dMonth; }
 	int getYear() { return dYear; }
