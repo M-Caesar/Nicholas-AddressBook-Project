@@ -13,3 +13,7 @@ personType::personType(string fname, string lname)
 	firstName = fname;
 	lastName = lname;
 }
+void personType::print()
+{
+	cout << firstName << " " << lastName << endl;
+}

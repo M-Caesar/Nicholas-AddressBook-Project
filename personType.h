@@ -12,7 +12,9 @@ public:
 	void setLastName(string lname);
 	string getFirstName() { return firstName; }
 	string getLastName() { return lastName; }
+	void print();
 
 	personType(string = " ", string = " ");
+	//add person type print funtion
 };
 
