@@ -14,6 +14,7 @@ void extPersonType::print()
 	//personType print();
 	cout << getFirstName() << " " << getLastName() << endl;
 	//addressType print();
+	cout << addressType.getAddress() <<  
 	cout << "Birthday: " << endl;
 	birthdate.print();//not sure why << is not working
 	cout << "Relationship: " << relationship;

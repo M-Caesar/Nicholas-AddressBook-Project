@@ -9,7 +9,7 @@ class extPersonType :
 {
 private:
     addressType address;
-    dateType birthdate;
+    dateType birthdate; //WHY NOT INT
     string phoneNumber;
     string relationship;
 public:
