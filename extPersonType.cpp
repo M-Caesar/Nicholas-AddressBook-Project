@@ -17,15 +17,7 @@ void extPersonType::setRelationship(string rship)
 
 void extPersonType::print()
 {
-	/*
-	//personType print();
-	cout << getFirstName() << " " << getLastName() << endl; //make this into the person type print function and then invoke that function here
-	//addressType print();
-	address.print(); //address is the object of addressType and that is how we are invoking the addressType print function
-	cout << "Birthday: " << endl;
-	birthdate.print();//not sure why << is not working
-	cout << "Relationship: " << relationship;
-	*/
+	//print in order of full name,birthday, address, phone number and then relationship
 	personType::print(); // name
 	birthdate.print();
 	address.print(); //address full
@@ -34,7 +26,9 @@ void extPersonType::print()
 
 }
 
-extPersonType::extPersonType(string fname, string lname, int nmonth, int nday, int nyear, string naddress, string ncity, string nstate, int nzipcode, string pnumber, string rship):personType(fname, lname), address(naddress, ncity, nstate, nzipcode), birthdate(nmonth, nday, nyear)
+extPersonType::extPersonType(string fname, string lname, int nmonth, int nday, int nyear, string naddress, 
+	string ncity, string nstate, int nzipcode, string pnumber, string rship):
+	personType(fname, lname), address(naddress, ncity, nstate, nzipcode), birthdate(nmonth, nday, nyear)
 {
 	// we need to invoke the constructors of the the other classes, do not use these
 	//how to invoke with no objects?
@@ -42,18 +36,4 @@ extPersonType::extPersonType(string fname, string lname, int nmonth, int nday, i
 	// 
 	phoneNumber = pnumber;
 	relationship = rship;
-	//------------------------------------------
-	/*
-	personType firstName = fname;
-	personType lastName = lname;
-	dateType Month = nmonth;
-	dateType Day = nday;
-	dateType Year = nyear;
-	addressType address = naddress;
-	addressType city = ncity;
-	addressType state = nstate;
-	addressType zipCode = nzipcode; //cant change from addressType to int?
-	phoneNumber = pnumber;
-	relationship = rship;
-	*/
 }
