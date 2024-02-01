@@ -25,7 +25,7 @@ public:
     //Getters
     string getPhoneNumber() { return phoneNumber;}
     string getRelationship() { return relationship; }
-    int getBirthMonth() { return birthdate.getMonth(); } //may need to create a function to extract month from birthdate
+    int getBirthMonth() { return birthdate.getMonth(); } 
 
     //Print function for extPersonType
     //Precondition: print functions for addressType, dateType and personType are all functional and are called in this function

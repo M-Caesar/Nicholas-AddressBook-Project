@@ -1,9 +1,12 @@
 #include "extPersonType.h"
 
+//setter for phone number
 void extPersonType::setPhoneNumber(string pnumber)
 {
 	phoneNumber = pnumber;
 }
+
+//setter for relationship with verification
 void extPersonType::setRelationship(string rship)
 {
 	if (rship == "Family" || rship == "Friend" || rship == "Business")
@@ -15,12 +18,13 @@ void extPersonType::setRelationship(string rship)
 	//there are only three types of relationship, you need to insert verification if statements to determine if it the wrong one
 }
 
+//print function for extPersonType
 void extPersonType::print()
 {
 	//print in order of full name,birthday, address, phone number and then relationship
-	personType::print(); // name
-	birthdate.print();
-	address.print(); //address full
+	personType::print(); // name referencing personType print function
+	birthdate.print(); // Birthdate referencing dateType print function
+	address.print(); //address referencing addressType print function
 	cout << phoneNumber << endl;
 	cout << relationship << endl;
 
