@@ -13,7 +13,7 @@ public:
 	//Postcondition: Function assigns first name to firstname variable
 	void setFirstName(string fname);
 	//Precondition: Function is provided with last name to be entered into memory
-	//Postcondition: Function assigns last name to firstname variable
+	//Postcondition: Function assigns last name to lastname variable
 	void setLastName(string lname);
 
 	//Getters
