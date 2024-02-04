@@ -1,3 +1,4 @@
+/*
 #include "addressBookType.h"
 
 void initEntry(string entry)
@@ -42,4 +43,4 @@ void addressBookType::sortEntries() //used provided algorith, check with prof to
 			current = current++;
 		}
 	}
-}
+}*/

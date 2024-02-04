@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include "personType.h"
 #include "addressType.h"
 #include "dateType.h"
@@ -42,5 +42,4 @@ public:
 
 	/*This function sorts the list using lastName field as the sort key so that the list will be printed in alphabetical order by last name.*/
 	void sortEntries();
-};
-
+}*/
