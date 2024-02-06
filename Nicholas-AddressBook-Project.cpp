@@ -1,7 +1,7 @@
 #include <iostream>
 #include "extPersonType.h"
 #include "addressBookType.h"
-//using namespace std;
+using namespace std;
 int main()
 {
 	/*

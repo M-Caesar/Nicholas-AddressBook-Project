@@ -28,6 +28,8 @@ void addressBookType::initEntry(string entry)
 		getline(inFile, city);
 		inFile >> state >> zip >> phone >> relation;
 
+		cout << "This is a test for zip:" << zip << "Test over" << endl;
+
 		//assigning data to extPersonType object with temporary extPersonType object
 		//extPersonType tperson(firstName, lastName, month, day, year, address, city, state, zip, phone, relation);
 
@@ -71,18 +73,33 @@ void addressBookType::findPerson(string person)
 
 void addressBookType::findBirthday(int month)
 {
-
+	for (int i = 0; i <= length; i++)
+	{
+		if (month == addressList[i].getBirthMonth())
+		{
+			addressList[i].print();
+		}
+	}
 }
 
-void addressBookType::findRelations(string relationshiip)
+void addressBookType::findRelations(string relationship)
 {
-
+	for (int i = 0; i <= length; i++)
+	{
+		if (relationship == addressList[i].getRelationship())
+		{
+			addressList[i].print();
+		}
+	}
 }
 
-//void addressBookType::print()
-//{
-	
-//}
+void addressBookType::print()
+{
+	for (int i = 0; i <= length; i++)
+	{
+		addressList[i].print();
+	}
+}
 
 void addressBookType::sortEntries() //used provided algorith, check with prof to see if it is correct
 { /*
