@@ -28,12 +28,12 @@ void addressBookType::initEntry(string entry)
 		getline(inFile, city);
 		inFile >> state >> zip >> phone >> relation;
 
-		cout << "This is a test for zip:" << zip << "Test over" << endl;
+		//Testing: cout << "This is a test for zip:" << zip << "Test over" << endl;
 
 		//assigning data to extPersonType object with temporary extPersonType object
-		//extPersonType tperson(firstName, lastName, month, day, year, address, city, state, zip, phone, relation);
+		extPersonType tperson(firstName, lastName, month, day, year, address, city, state, zip, phone, relation);
 
-		//addEntry(tperson);
+		addEntry(tperson);
 
 		//printing the data
 		cout << firstName << " " << lastName << endl;
@@ -67,6 +67,7 @@ void addressBookType::findPerson(string person)
 		if (person == addressList[i].getLastName())
 		{
 			addressList[i].print();
+			cout << endl;
 		}
 	}
 }
@@ -78,6 +79,7 @@ void addressBookType::findBirthday(int month)
 		if (month == addressList[i].getBirthMonth())
 		{
 			addressList[i].print();
+			cout << endl;
 		}
 	}
 }
@@ -89,6 +91,7 @@ void addressBookType::findRelations(string relationship)
 		if (relationship == addressList[i].getRelationship())
 		{
 			addressList[i].print();
+			cout << endl;
 		}
 	}
 }
@@ -98,6 +101,7 @@ void addressBookType::print()
 	for (int i = 0; i <= length; i++)
 	{
 		addressList[i].print();
+		cout << endl;
 	}
 }
 

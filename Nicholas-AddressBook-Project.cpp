@@ -41,7 +41,21 @@ int main()
 	*/
 
 	addressBookType test;
+	cout << "Testing initalizer:" << endl;
 	test.initEntry("love");
+
+	cout << "Testing the Find Birthday function for December(12):" << endl << endl;
+	test.findBirthday(12);
+
+	cout << "Testing the Find Person function for Tomak:" << endl << endl;
+	test.findPerson("Tomak");
+
+	cout << "Testing the Find relations function for Friend:" << endl << endl;
+	test.findRelations("Friend");
+
+	cout << "Testing the Print function:" << endl << endl;
+	test.print();
+
 }
 
 

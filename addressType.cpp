@@ -41,7 +41,8 @@ addressType::addressType(string newaddress, string newcity,string newstate,int n
 	//if provided zipcode is outside of that range, function will not accept input and return default value of 10000 and error message
 	void addressType::setZipcode(int zip)
 	{
-		if (zip < 11111 || zip > 99999)
+		//if (zip < 11111 || zip > 99999) do we keep this floor because it provides us zipcode outside of bounds
+		if (zip < 10000 || zip > 99999)
 		{
 			zipcode = 10000;
 			cout << "Zipcode is invalid" << endl;

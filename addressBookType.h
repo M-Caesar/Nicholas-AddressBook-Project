@@ -11,8 +11,8 @@ class addressBookType
 {
 private:
 	extPersonType addressList[500];
-	int length;
-	int maxLength;
+	int length = 0;
+	int maxLength = 500;
 
 public:
 	/* Reads the address book data from a file, creates an extPersonType object from this data.
