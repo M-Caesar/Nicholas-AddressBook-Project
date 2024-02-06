@@ -1,26 +1,91 @@
-/*
 #include "addressBookType.h"
 
-void initEntry(string entry)
+void addressBookType::initEntry(string entry)
 {
-	std::ifstream inputFile("AddressBookData.txt");	
+	//std::ifstream inputFile("AddressBookData.txt");
+	//example code for input
+
+	ifstream inFile;
+	string firstName, lastName;
+	int month, day, year;
+	string address, city, state;
+	int zip;
+	string phone, relation;
+
+	inFile.open("AddressBookData.txt");
+	if (!inFile.is_open())
+	{
+		cout << "Could not open file" << endl;
+	}
+
+	int recCount = 0;
+	while (inFile >> firstName)
+	{
+		//intaking the data
+		inFile >> lastName >> month >> day >> year;
+		inFile.ignore();
+		getline(inFile, address);
+		getline(inFile, city);
+		inFile >> state >> zip >> phone >> relation;
+
+		//assigning data to extPersonType object with temporary extPersonType object
+		//extPersonType tperson(firstName, lastName, month, day, year, address, city, state, zip, phone, relation);
+
+		//addEntry(tperson);
+
+		//printing the data
+		cout << firstName << " " << lastName << endl;
+		cout << month << "/" << day << "/" << year << endl;
+		cout << address << endl;
+		cout << city << "," << state << " " << zip << endl;
+		cout << phone << " " << relation << endl;
+		cout << endl;
+
+		recCount++;
+	}
+
+	cout << "Read " << recCount << " records" << endl;
+
+
 }
 
-void addEntry(extPersonType nentry);
-
-void findPerson(string person);
-
-void findBirthday(int month);
-
-void findRelations(string relationshiip);
-
-void print()
+void addressBookType::addEntry(extPersonType nentry)
 {
+	if (length < 500)
+	{
+		addressList[length] = nentry;
+	}
+	length++;
+}
+
+void addressBookType::findPerson(string person)
+{
+	for (int i = 0; i <= length; i++)
+	{
+		if (person == addressList[i].getLastName())
+		{
+			addressList[i].print();
+		}
+	}
+}
+
+void addressBookType::findBirthday(int month)
+{
+
+}
+
+void addressBookType::findRelations(string relationshiip)
+{
+
+}
+
+//void addressBookType::print()
+//{
 	
-}
+//}
 
 void addressBookType::sortEntries() //used provided algorith, check with prof to see if it is correct
-{
+{ /*
 	int current = 1;
 	while (current < length)
 	{
@@ -43,4 +108,5 @@ void addressBookType::sortEntries() //used provided algorith, check with prof to
 			current = current++;
 		}
 	}
-}*/
+	*/
+}

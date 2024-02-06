@@ -1,24 +1,47 @@
 #include <iostream>
 #include "extPersonType.h"
-using namespace std;
+#include "addressBookType.h"
+//using namespace std;
 int main()
 {
-	cout << "Testing default constructor ... " << endl;
-	extPersonType defPerson;
-	defPerson.print();
-	cout << endl;
-	cout << "Testing constructor with parameters ... " << endl;
-	extPersonType person("George", "Smith", 4, 30, 1994, "145 South Street, Apt.5", "Hampton", "VA", 23554, "757 - 444 - 5555", "Friend");
-		person.print();
-	cout << endl;
-	cout << "Testing invalid relationship (Spouse) ... " << endl;
-	person.setRelationship("Spouse");
-	person.print();
-	cout << endl;
-	cout << "Testing valid relationship (Business) ... " << endl;
-	person.setRelationship("Business");
-	person.print();
-	cout << endl;
+	/*
+	ifstream inFile;
+	string firstName, lastName;
+	int month, day, year;
+	string address, city, state;
+	int zip;
+	string phone, relation;
+
+	inFile.open("AddressBookData.txt");
+	if (!inFile.is_open())
+	{
+		cout << "Could not open file" << endl;
+	}
+
+	int recCount = 0;
+	while (inFile >> firstName)
+	{
+		inFile >> lastName >> month >> day >> year;
+		inFile.ignore();
+		getline(inFile, address);
+		getline(inFile, city);
+		inFile >> state >> zip >> phone >> relation;
+
+		cout << firstName << " " << lastName << endl;
+		cout << month << "/" << day << "/" << year << endl;
+		cout << address << endl;
+		cout << city << "," << state << " " << zip << endl;
+		cout << phone << " " << relation << endl;
+		cout << endl;
+
+		recCount++;
+	}
+
+	cout << "Read " << recCount << "records" << endl;
+	*/
+
+	addressBookType test;
+	test.initEntry("love");
 }
 
 

@@ -1,11 +1,11 @@
-/*#pragma once
+#pragma once
 #include "personType.h"
 #include "addressType.h"
 #include "dateType.h"
 #include "extPersonType.h"
 #include <iostream>
 #include <fstream>
-#include <list>
+#include <string>
 using namespace std;
 class addressBookType
 {
@@ -22,7 +22,7 @@ public:
 	*/
 	void initEntry(string entry);
 
-	/*A modifier function. Takes an input of extPersonType object. This function verifies that there is still 
+	/*A modifier function. Takes an input of extPersonType object. This function verifies that there is still
 	room in the array and prevents additions if the array is fill, stores the extPersonType object in the array and increments the length variable.
 	Because addressList is a partially filled array,the length variable can be used as the index for a new addition to the array before it is incremented*/
 	void addEntry(extPersonType nentry);
@@ -38,8 +38,8 @@ public:
 
 	/*This function prints all the entries in the addressList. All this function needs to do is to iterate through the list and call the print
 	function of each extPersonType object*/
-	void priint();
+	void print();
 
 	/*This function sorts the list using lastName field as the sort key so that the list will be printed in alphabetical order by last name.*/
 	void sortEntries();
-}*/
+};
