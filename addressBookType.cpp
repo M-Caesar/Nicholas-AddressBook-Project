@@ -58,6 +58,7 @@ void addressBookType::addEntry(extPersonType nentry)
 		addressList[length] = nentry;
 	}
 	length++;
+	//add error message for if array is full
 }
 
 void addressBookType::findPerson(string person)
