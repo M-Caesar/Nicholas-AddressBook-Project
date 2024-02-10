@@ -12,7 +12,7 @@ void addressBookType::initEntry(string entry)
 	int zip;
 	string phone, relation;
 
-	inFile.open("AddressBookData.txt");
+	inFile.open(entry);
 	if (!inFile.is_open())
 	{
 		cout << "Could not open file" << endl;
@@ -99,7 +99,7 @@ void addressBookType::findRelations(string relationship)
 
 void addressBookType::print()
 {
-	for (int i = 0; i <= length; i++)
+	for (int i = 0; i < length; i++)
 	{
 		addressList[i].print();
 		cout << endl;
@@ -107,7 +107,7 @@ void addressBookType::print()
 }
 
 void addressBookType::sortEntries() //used provided algorith, check with prof to see if it is correct
-{ /*
+{ 
 	int current = 1;
 	while (current < length)
 	{
@@ -117,18 +117,21 @@ void addressBookType::sortEntries() //used provided algorith, check with prof to
 
 		while (i > 0 && !placefound)
 		{
-			if (addressList[i] < addressList[i - 1])
+			if (addressList[i].getLastName() < addressList[i - 1].getLastName())
 			{
 				extPersonType temp = addressList[i];
 				addressList[i] = addressList[i - 1];
 				addressList[i - 1] = temp;
 				i = i - 1;
+				//addressList[i].print();
+				//cout << length << endl;
+				//cout << "This is current: " << current << endl;
 			}
 
 			else
 				placefound = true;
-			current = current++;
 		}
+		current++;
 	}
-	*/
+	
 }

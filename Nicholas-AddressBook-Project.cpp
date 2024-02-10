@@ -32,14 +32,14 @@ void showMenu(addressBookType menuadd)
 				cout << " You've chosen Choice 2: Find Birthday " << endl;
 				cout << "Please enter a birth month: " << endl;
 				cin >> birthmonth;
-				cout << "This is the last name " << birthmonth << endl;
+				cout << "These are the entries for " << birthmonth << endl;
 				menuadd.findBirthday(birthmonth);
 				break;
 			case 3:
 				cout << " You've chosen Choice 3: Find Relationship " << endl;
 				cout << "Please enter a relationship type: " << endl;
 				cin >> relation;
-				cout << "This is the last name " << relation << endl;
+				cout << "These are the entries that have " << relation << endl;
 				menuadd.findRelations(relation);
 				break;
 			case 4:
@@ -53,10 +53,13 @@ void showMenu(addressBookType menuadd)
 int main()
 {
 	addressBookType test;
+	string file;
+	cout << "Please enter a file to read: ";
+	cin >> file;
+	//cout << "Testing initalizer:" << endl;
+	test.initEntry(file);
 
-	cout << "Testing initalizer:" << endl;
-	test.initEntry("love");
-
+	/*
 	cout << "Testing the Find Birthday function for December(12):" << endl << endl;
 	test.findBirthday(12);
 
@@ -68,6 +71,11 @@ int main()
 
 	cout << "Testing the Print function:" << endl << endl;
 	test.print();
+
+	cout << "Testing the sort function:" << endl << endl;
+	test.sortEntries();
+	test.print();
+	*/
 
 	showMenu(test);
 
