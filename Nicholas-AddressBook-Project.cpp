@@ -10,13 +10,13 @@ void showMenu(addressBookType menuadd)
 		string lastName;
 		string relation;
 		int birthmonth;
-		//addressBookType menuadd;
 		do {
 			cout << "~~~~~~~~~~~~~~~~~Main Menu~~~~~~~~~~~~~~~" << endl << "Please enter a choice:" << endl;
 			cout << "Choice 1: Find Person" << endl;
 			cout << "Choice 2: Find Birth Month" << endl;
 			cout << "Choice 3: Find Relationship" << endl;
-			cout << "Choice 4: exit" << endl;
+			cout << "Choice 4: Sort" << endl;
+			cout << "Choice 5: Exit" << endl;
 			cin >> choice;
 
 			switch (choice)
@@ -25,7 +25,7 @@ void showMenu(addressBookType menuadd)
 				cout << " You've chosen Choice 1: Find Person " << endl;
 				cout << "Please enter a last name: " << endl;
 				cin >> lastName;
-				cout << "This is the last name " << lastName << endl;
+				cout << "These are entries for the " << lastName << " last name" << endl;
 				menuadd.findPerson(lastName);
 				break;
 			case 2:
@@ -43,12 +43,19 @@ void showMenu(addressBookType menuadd)
 				menuadd.findRelations(relation);
 				break;
 			case 4:
-				cout << " You've chosen Choice 4: " << endl;
+				cout << " You've chosen Choice 4: Sort " << endl;
+				menuadd.sortEntries();
+				cout << "Entries have been sorted alphabetically" << endl;
+				menuadd.print();
 				break;
+			case 5:
+				cout << " You've chosen Choice 5: " << endl;
+				break;
+
 			default:
 				cout << "Error: inpoper choice, please try again!" << endl;
 			}
-		} while (choice != 4);
+		} while (choice != 5);
 	}
 int main()
 {

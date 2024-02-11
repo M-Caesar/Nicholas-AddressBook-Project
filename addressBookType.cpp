@@ -15,7 +15,8 @@ void addressBookType::initEntry(string entry)
 	inFile.open(entry);
 	if (!inFile.is_open())
 	{
-		cout << "Could not open file" << endl;
+		cout << "Could not open file, exit the program and try again" << endl;
+
 	}
 
 	int recCount = 0;
