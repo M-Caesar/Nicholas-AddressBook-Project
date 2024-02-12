@@ -3,7 +3,9 @@
 #include "addressBookType.h"
 using namespace std;
 
-
+//Function for creating the main menu for use by the client
+//Precondition: none
+//Postcondition: Returns the users selection
 void showMenu(addressBookType menuadd)
 	{
 		int choice;
@@ -57,6 +59,8 @@ void showMenu(addressBookType menuadd)
 			}
 		} while (choice != 5);
 	}
+
+//Client Program
 int main()
 {
 	addressBookType test;
