@@ -37,12 +37,12 @@ void addressBookType::initEntry(string entry)
 		addEntry(tperson);
 
 		//printing the data
-		cout << firstName << " " << lastName << endl;
-		cout << month << "/" << day << "/" << year << endl;
-		cout << address << endl;
-		cout << city << "," << state << " " << zip << endl;
-		cout << phone << " " << relation << endl;
-		cout << endl;
+		//cout << firstName << " " << lastName << endl;
+		//cout << month << "/" << day << "/" << year << endl;
+		//cout << address << endl;
+		//cout << city << "," << state << " " << zip << endl;
+		//cout << phone << " " << relation << endl;
+		//cout << endl;
 
 		recCount++;
 	}
