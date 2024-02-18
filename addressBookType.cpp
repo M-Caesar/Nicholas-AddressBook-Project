@@ -57,9 +57,13 @@ void addressBookType::addEntry(extPersonType nentry)
 	if (length < 500)
 	{
 		addressList[length] = nentry;
+		length++;
 	}
-	length++;
-	//add error message for if array is full
+	//length++;
+	else
+	{
+		cout << "Error: Array is full, addition failure" << endl;
+	}
 }
 
 void addressBookType::findPerson(string person)
