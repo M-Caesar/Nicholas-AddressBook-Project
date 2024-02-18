@@ -10,6 +10,7 @@ int showMenu(addressBookType menuadd)
 		//string lastName;
 		//string relation;
 		//int birthmonth;
+		//test
 		cout << "~~~~~~~~~~~~~~~~~Main Menu~~~~~~~~~~~~~~~" << endl << "Please enter a choice:" << endl;
 		cout << "Choice 1: Find Person" << endl;
 		cout << "Choice 2: Find Birth Month" << endl;
