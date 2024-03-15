@@ -12,6 +12,8 @@ void addressBookType::initEntry(string entry)
 	int zip;
 	string phone, relation;
 
+
+
 	inFile.open(entry);
 	if (!inFile.is_open())
 	{
@@ -36,14 +38,6 @@ void addressBookType::initEntry(string entry)
 
 		addEntry(tperson);
 
-		//printing the data
-		//cout << firstName << " " << lastName << endl;
-		//cout << month << "/" << day << "/" << year << endl;
-		//cout << address << endl;
-		//cout << city << "," << state << " " << zip << endl;
-		//cout << phone << " " << relation << endl;
-		//cout << endl;
-
 		recCount++;
 	}
 
@@ -52,22 +46,15 @@ void addressBookType::initEntry(string entry)
 
 }
 
+//modify to use the 
 void addressBookType::addEntry(extPersonType nentry)
 {
-	if (length < 500)
-	{
-		addressList[length] = nentry;
-		length++;
-	}
-	//length++;
-	else
-	{
-		cout << "Error: Array is full, addition failure" << endl;
-	}
+	addressLList.insert(nentry);
 }
 
 void addressBookType::findPerson(string person)
 {
+	/*
 	for (int i = 0; i <= length; i++)
 	{
 		if (person == addressList[i].getLastName())
@@ -76,10 +63,41 @@ void addressBookType::findPerson(string person)
 			cout << endl;
 		}
 	}
+	*/
+	nodeType<extPersonType>* current = first;
+	bool found = false;
+	while (current != nullptr && !found)
+	{
+		if (current->info.getLastName() == person || current->info.getFirstName() == person)
+		{
+			found = true;
+			current->info.print();
+		}
+		else
+		{
+			current = current->link;
+		}
+	}
 }
 
 void addressBookType::findBirthday(int month)
 {
+	nodeType<extPersonType>* current = first;
+	bool found = false;
+	while (current != nullptr && !found)
+	{
+		if (current->info.getBirthMonth() == month)
+		{
+			found = true;
+			current->info.print();
+		}
+		else
+		{
+			current = current->link;
+		}
+	}
+
+	/*-------------------Old Code---------------------------------
 	for (int i = 0; i <= length; i++)
 	{
 		if (month == addressList[i].getBirthMonth())
@@ -88,10 +106,27 @@ void addressBookType::findBirthday(int month)
 			cout << endl;
 		}
 	}
+		---------------------------------------------------------*/
 }
 
 void addressBookType::findRelations(string relationship)
 {
+	nodeType<extPersonType>* current = first;
+	//bool found = false;
+	while (current != nullptr)
+	{
+		if (current->info.getRelationship() == relationship)
+		{
+			//found = true;
+			current->info.print();
+		}
+		else
+		{
+			current = current->link;
+		}
+	}
+
+	/*------------------------ - Old Code----------------------------
 	for (int i = 0; i <= length; i++)
 	{
 		if (relationship == addressList[i].getRelationship())
@@ -100,43 +135,55 @@ void addressBookType::findRelations(string relationship)
 			cout << endl;
 		}
 	}
+	--------------------------------------------------------------*/
 }
 
 void addressBookType::print()
 {
+	nodeType<extPersonType>* current = first;
+	bool found = false;
+	while (current != nullptr)
+	{
+		current->info.print();
+		current = current->link;
+	}
+	/*--------------------------Old Code----------------------------
 	for (int i = 0; i < length; i++)
 	{
 		addressList[i].print();
 		cout << endl;
 	}
+	---------------------------------------------------------------*/
 }
 
-void addressBookType::sortEntries() //used provided algorith, check with prof to see if it is correct
-{ 
-	int current = 1;
-	while (current < length)
-	{
-		int i = current;
-		bool placefound = false;
-		//int list[1];
+void addressBookType::inputPerson(extPersonType inEntry)
+{
+	string firstName, lastName;
+	int month, day, year;
+	string address, city, state;
+	int zip;
+	string phone, relation;
 
-		while (i > 0 && !placefound)
-		{
-			if (addressList[i].getLastName() < addressList[i - 1].getLastName())
-			{
-				extPersonType temp = addressList[i];
-				addressList[i] = addressList[i - 1];
-				addressList[i - 1] = temp;
-				i = i - 1;
-				//addressList[i].print();
-				//cout << length << endl;
-				//cout << "This is current: " << current << endl;
-			}
-
-			else
-				placefound = true;
-		}
-		current++;
-	}
-	
+	cout << "Taking input for new contact:" << endl;
+	cout << "Please input first name" << endl;
+	cin >> firstName;
+	cout << "Please input last name" << endl;
+	cin >> lastName;
+	cout << "Please input their birth month, day and year" << endl;
+	cin >> month >> day >> year;
+	cout << "Please input address, then city, then state, then zip code" << endl;
+	cin >> address >> city >> state >> zip;
+	cout << "Please input phone number in form XXX-XXX-XXXX" << endl;
+	cin >> phone;
+	cout << "Please input relation to contact" << endl;
+	cin >> relation;
+	cout << "Creating new contact..." << endl;
+	extPersonType tperson(firstName, lastName, month, day, year, address, city, state, zip, phone, relation);
+	addEntry(tperson);
 }
+
+void addressBookType::removePerson(extPersonType remEntry)
+{
+	addressLList.deleteNode(remEntry);
+}
+

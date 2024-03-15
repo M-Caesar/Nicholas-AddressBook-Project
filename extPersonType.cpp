@@ -41,3 +41,22 @@ extPersonType::extPersonType(string fname, string lname, int nmonth, int nday, i
 	phoneNumber = pnumber;
 	relationship = rship;
 }
+
+//need to look up how to implement a key
+
+bool extPersonType::operator==(extPersonType othereq)
+{
+	return (lastName == othereq.lastName && this->getFirstName() == othereq.getFirstName());
+}
+
+bool extPersonType::operator!=(extPersonType othernot)
+{
+	return !(*this == othernot);
+}
+
+bool extPersonType::operator>=(extPersonType otherless)
+{
+	return ((this->getLastName() > otherless.getLastName()) ||
+		(this->getLastName() == otherless.getLastName() && 
+			this->getFirstName() >= otherless.getFirstName()));
+}

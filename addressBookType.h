@@ -3,13 +3,18 @@
 #include "addressType.h"
 #include "dateType.h"
 #include "extPersonType.h"
+#include "linkedList (1).h"
+#include "orderedLinkedList.h"
 #include <iostream>
 #include <fstream>
 #include <string>
 using namespace std;
-class addressBookType
+
+//template <class extPersonType>
+class addressBookType : public orderedLinkedList<extPersonType>
 {
 private:
+	orderedLinkedList addressLList;
 	extPersonType addressList[500];
 	int length = 0;
 	int maxLength = 500;
@@ -54,5 +59,10 @@ public:
 	/*This function sorts the list using lastName field as the sort key so that the list will be printed in alphabetical order by last name.
 	Precondition: Array has been itterated with desired entries
 	Postcondition: Sorts entries alphabetically in the array*/
-	void sortEntries();
+	// Function not needed void sortEntries();
+
+	void inputPerson(extPersonType inEntry);
+
+	void removePerson(extPersonType remEntry);
+
 };

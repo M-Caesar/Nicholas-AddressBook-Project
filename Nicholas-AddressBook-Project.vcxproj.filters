@@ -50,6 +50,12 @@
     <ClInclude Include="addressBookType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="linkedList (1).h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="orderedLinkedList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="AddressBookData.txt">

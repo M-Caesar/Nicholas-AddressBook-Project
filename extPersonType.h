@@ -2,6 +2,8 @@
 #include "personType.h"
 #include "addressType.h"
 #include "dateType.h"
+#include "linkedList (1).h"
+#include "orderedLinkedList.h"
 #include <iostream>
 //using namespace std;
 class extPersonType :
@@ -31,6 +33,14 @@ public:
     //Precondition: print functions for addressType, dateType and personType are all functional and are called in this function
     //Postcondition: All stored information is printed correctly
     void print();
+
+    bool operator==(extPersonType othereq);
+    bool operator!=(extPersonType othernot);
+    bool operator>=(extPersonType otherless);
+    
+
+
+
 
     //Constructor
     //Precondition: Contructor for extPersonType. Accepts client arguments and passes them to appropriate constructors in other classes 
