@@ -16,7 +16,10 @@ int showMenu(addressBookType menuadd)
 		cout << "Choice 2: Find Birth Month" << endl;
 		cout << "Choice 3: Find Relationship" << endl;
 		cout << "Choice 4: Print" << endl;
-		cout << "Choice 5: Exit" << endl;
+		cout << "Choice 5: Add Person" << endl;
+		cout << "Choice 6: Remove Person" << endl;
+		cout << "Choice 7: Save" << endl;
+		cout << "Choice 8: Exit" << endl;
 		cin >> choice;
 
 		return choice;
@@ -34,8 +37,10 @@ int main()
 	cout << "Entries printed in alphabetical order: " << endl;
 	//orderedLinkedList<addressBookType> entryList;
 	//entryList.print();
+	string firstName;
 	string lastName;
 	string relation;
+	string filename;
 	int birthmonth;
 	int chosen;
 
@@ -70,13 +75,34 @@ int main()
 			test.print();
 			break;
 		case 5:
-			cout << " You've chosen Choice 5: " << endl;
+			cout << " You've chosen Choice 5: Add Person" << endl;
+			cout << "Please enter the contact information: " << endl;
+			test.inputPerson();
+			break;
+		case 6:
+			cout << " You've chosen Choice 6: Remove Person" << endl;
+			cout << "Enter the first name and last name of the person to remove" << endl;
+			cin >> firstName >> lastName;
+			test.removePerson(firstName, lastName);
+			cout << "Person has been removed!" << endl;
+			break;
+		case 7:
+			cout << " You've chosen Choice 7: Save" << endl;
+			cout << "Enter a file that you would like to save to" << endl;
+			cin >> filename;
+			test.saveFile(filename);
+			cout << "File saved!" << endl;
+			break;
+
+		case 8:
+			cout << " You've chosen Choice 8: " << endl;
+			test.saveFile("TestBook.txt");
 			break;
 
 		default:
 			cout << "Error: inpoper choice, please try again!" << endl;
 		}
-	} while (chosen != 5);
+	} while (chosen != 8);
 };
 
 

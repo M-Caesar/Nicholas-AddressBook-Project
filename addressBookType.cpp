@@ -1,5 +1,6 @@
 #include "addressBookType.h"
 #include "linkedList (1).h"
+
 using namespace std;
 
 void addressBookType::initEntry(string entry)
@@ -50,10 +51,10 @@ void addressBookType::initEntry(string entry)
 //modify to use the 
 void addressBookType::addEntry(extPersonType nentry)
 {
-	addressLList.insertFirst(nentry);
+	insertFirst(nentry);
 }
 
-void addressBookType::findPerson(string person)
+void addressBookType::findPerson(string person) const
 {
 	/*
 	for (int i = 0; i <= length; i++)
@@ -73,6 +74,7 @@ void addressBookType::findPerson(string person)
 		{
 			found = true;
 			current->info.print();
+			current = current->link;
 		}
 		else
 		{
@@ -81,16 +83,17 @@ void addressBookType::findPerson(string person)
 	}
 }
 
-void addressBookType::findBirthday(int month)
+void addressBookType::findBirthday(int month) const
 {
 	nodeType<extPersonType>* current = first;
 	bool found = false;
-	while (current != nullptr && !found)
+	while (current != nullptr)
 	{
 		if (current->info.getBirthMonth() == month)
 		{
-			found = true;
+			//found = true;
 			current->info.print();
+			current = current->link;
 		}
 		else
 		{
@@ -110,16 +113,17 @@ void addressBookType::findBirthday(int month)
 		---------------------------------------------------------*/
 }
 
-void addressBookType::findRelations(string relationship)
+void addressBookType::findRelations(string relationship) const
 {
 	nodeType<extPersonType>* current = first;
-	//bool found = false;
-	while (current != nullptr)
+	bool found = false;
+	while (current != nullptr && !found)
 	{
 		if (current->info.getRelationship() == relationship)
 		{
 			//found = true;
 			current->info.print();
+			current = current->link;
 		}
 		else
 		{
@@ -142,12 +146,12 @@ void addressBookType::findRelations(string relationship)
 //template <class Type>
 void addressBookType::print() const
 {
-	nodeType<extPersonType>* current = first;
+	nodeType<extPersonType> *current = first;
 	//bool found = false;
 	while (current != nullptr)
 	{
 		current->info.print();
-		addressLList.print();
+		//print();
 		//cout << current->info << endl;
 		//addressLList.print();
 		current = current->link;
@@ -162,7 +166,7 @@ void addressBookType::print() const
 	---------------------------------------------------------------*/
 }
 
-void addressBookType::inputPerson(extPersonType inEntry)
+void addressBookType::inputPerson()
 {
 	string firstName, lastName;
 	int month, day, year;
@@ -188,11 +192,62 @@ void addressBookType::inputPerson(extPersonType inEntry)
 	addEntry(tperson);
 }
 
-void addressBookType::removePerson(extPersonType remEntry)
+void addressBookType::removePerson(string fname, string lname)
 {
-	addressLList.deleteNode(remEntry);
+	extPersonType persontoRemove;
+	nodeType<extPersonType>* current = first;
+	while (current != nullptr)
+	{
+		if (current->info.getLastName() == lname && current->info.getFirstName() == fname)
+		{
+			persontoRemove = current->info;
+			//deleteNode(current);
+			//current = current->link;
+			break;
+		}
+		current = current->link;
+	}
+
+	if (current != nullptr)
+	{
+		deleteNode(persontoRemove);
+	}
+	//deleteNode(key);
+	return;
 }
 
+void addressBookType::saveFile(string filename)
+{
+	ofstream outFile(filename);
+	extPersonType printPerson;
+	int iter = 0;
+
+	if (!outFile.is_open())
+	{
+		std::cerr << "Error: Unable to open file: " << filename << endl;
+		return;
+	}
+
+	nodeType<extPersonType>* current = first;
+	while (current != nullptr)
+	{
+		//current->info.print();
+		std::streambuf* cout_buf = std::cout.rdbuf();
+		std::cout.rdbuf(outFile.rdbuf());
+		current->info.print();
+		std::cout.rdbuf(cout_buf);
+		//outFile << current->info.print();
+		//outFile.write((char*)&current->info, sizeof(current->info));
+		//printPerson = current->info;
+		//outFile << "This is a test" << endl;
+		current = current->link;
+		iter++;
+	}
+	outFile.close();
+	return;
+}
+
+/*
 template <class Type>
 ostream& operator<<(ostream& osObject, const orderedLinkedList<Type>& list)
 {
@@ -205,7 +260,7 @@ ostream& operator<<(ostream& osObject, const orderedLinkedList<Type>& list)
 	//osObject << extPerson << endl;
 	return osObject;
 }
-
+*/
 /*
 template <class Type>
 ostream& operator<<(ostream& os, const extPersonType& person)

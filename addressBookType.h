@@ -14,12 +14,13 @@ using namespace std;
 class addressBookType : public orderedLinkedList<extPersonType>
 {
 private:
-	orderedLinkedList<extPersonType> addressLList;
-	extPersonType addressList[500];
-	int length = 0;
-	int maxLength = 500;
+	//orderedLinkedList<extPersonType> addressLList;
+	//extPersonType addressList[500];
+	//int length = 0;
+	//int maxLength = 500;
 
 public:
+
 	/* Reads the address book data from a file, creates an extPersonType object from this data.
 	Calls the addEntry() function to add it to the 'addressList'.
 	Precondition: Client program has a .txt file to read from that adheres to the readable format of the function.
@@ -38,17 +39,17 @@ public:
 	/*This function takes the last name of a person as an input and prints the entry for that person if found in the addressList array.
 	Precondition: Array object has been created and initalized. Takes input string for last name of desired person
 	Postcondition: Iterates through the array and if the provided string matches a last name, it returns the object*/
-	void findPerson(string person);
+	void findPerson(string person) const;
 
 	/*This function takes a month number as input and prints the names of all the persons in the addressList array who have birthdays in that month.
 	Precondition: Array object has been created and initalized. Takes input integer for birth month of desired entries
 	Postcondition: Itteraties through the array and if the provided int matches a birth month, it returns the object*/
-	void findBirthday(int month);
+	void findBirthday(int month) const;
 
 	/*This function takes a relationship string  and prints the names of all the entries that are tagged with that relationship
 	Precondition: Array object has been created and initalized. Takes input string for relationship of desired entries
 	Postcondition: Itterates through the array and if the provided string matches a relationship, it returns the object*/
-	void findRelations(string relationshiip);
+	void findRelations(string relationshiip) const;
 
 	/*This function prints all the entries in the addressList. All this function needs to do is to iterate through the list and call the print
 	function of each extPersonType object
@@ -62,10 +63,10 @@ public:
 	Postcondition: Sorts entries alphabetically in the array*/
 	// Function not needed void sortEntries();
 
-	void inputPerson(extPersonType inEntry);
+	void inputPerson();
 
-	void removePerson(extPersonType remEntry);
+	void removePerson(string, string);
 
-	friend ostream& operator<<(ostream&, const orderedLinkedList&);
-	friend ostream& operator<<(ostream&, const extPersonType&);
+	void saveFile(string);
+	//friend ostream& operator<<(ostream&, const extPersonType&);
 };

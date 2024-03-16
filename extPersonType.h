@@ -9,12 +9,16 @@
 class extPersonType :
     public personType
 {
+    //template<class Type>
+    //friend ostream& operator<<(ostream&, const extPersonType&);
 private:
     addressType address;
     dateType birthdate;
     string phoneNumber;
     string relationship;
 public:
+    //friend ostream& operator<<(ostream&, const extPersonType&);
+    //friend ostream& operator<<(ostream&, const extPersonType&);
     //Setters
     //Precondition: Function is provided with phone number to be entered into memory
     //Postcondition: Function has successfully assigned values.
@@ -37,7 +41,7 @@ public:
     bool operator==(extPersonType othereq);
     bool operator!=(extPersonType othernot);
     bool operator>=(extPersonType otherless);
-    
+   // friend ostream& operator<<(ostream&, const extPersonType&);
 
 
 

@@ -60,3 +60,18 @@ bool extPersonType::operator>=(extPersonType otherless)
 		(this->getLastName() == otherless.getLastName() && 
 			this->getFirstName() >= otherless.getFirstName()));
 }
+
+/*
+template <class Type>
+ostream& operator<<(ostream& osObject, const orderedLinkedList<Type>& list)
+{
+	nodeType<Type>* current = list.first;
+	while (current != nullptr)
+	{
+		osObject << current->info << " ";
+		current = current->link;
+	}
+	//osObject << extPerson << endl;
+	return osObject;
+}
+*/
