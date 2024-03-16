@@ -1,4 +1,6 @@
 #include "addressBookType.h"
+#include "linkedList (1).h"
+using namespace std;
 
 void addressBookType::initEntry(string entry)
 {
@@ -18,7 +20,6 @@ void addressBookType::initEntry(string entry)
 	if (!inFile.is_open())
 	{
 		cout << "Could not open file, exit the program and try again" << endl;
-
 	}
 
 	int recCount = 0;
@@ -49,7 +50,7 @@ void addressBookType::initEntry(string entry)
 //modify to use the 
 void addressBookType::addEntry(extPersonType nentry)
 {
-	addressLList.insert(nentry);
+	addressLList.insertFirst(nentry);
 }
 
 void addressBookType::findPerson(string person)
@@ -138,15 +139,20 @@ void addressBookType::findRelations(string relationship)
 	--------------------------------------------------------------*/
 }
 
-void addressBookType::print()
+//template <class Type>
+void addressBookType::print() const
 {
 	nodeType<extPersonType>* current = first;
-	bool found = false;
+	//bool found = false;
 	while (current != nullptr)
 	{
 		current->info.print();
+		addressLList.print();
+		//cout << current->info << endl;
+		//addressLList.print();
 		current = current->link;
 	}
+	//cout << endl;
 	/*--------------------------Old Code----------------------------
 	for (int i = 0; i < length; i++)
 	{
@@ -187,3 +193,28 @@ void addressBookType::removePerson(extPersonType remEntry)
 	addressLList.deleteNode(remEntry);
 }
 
+template <class Type>
+ostream& operator<<(ostream& osObject, const orderedLinkedList<Type>& list)
+{
+	nodeType<Type>* current = list.first;
+	while (current != nullptr)
+	{
+		osObject << current->info << " ";
+		current = current->link;
+	}
+	//osObject << extPerson << endl;
+	return osObject;
+}
+
+/*
+template <class Type>
+ostream& operator<<(ostream& os, const extPersonType& person)
+{
+	os << person.getFirstName() << person.getLastName() << endl;
+	os << "Birthdate: " << person.getBirthMonth() << "/" << person.getBirthDay() << "/" << person.getBirthYear() << endl;
+	os << "Address: " << person.getAddress() << endl;
+	os << "Phone Number: " << person.getPhoneNumber() << endl;
+	os << "Relationship: " << person.getRelationship() << endl;
+	return os;
+}
+*/

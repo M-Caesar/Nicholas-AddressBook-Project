@@ -25,15 +25,15 @@ int showMenu(addressBookType menuadd)
 int main()
 {
 	addressBookType test;
-	//orderedLinkedList testList;
+	//orderedLinkedList<addressBookType> test;
 	string file;
 	cout << "Please enter a file to read: ";
 	cin >> file;
 	test.initEntry(file);
 	//test.sortEntries();
 	cout << "Entries printed in alphabetical order: " << endl;
-	orderedLinkedList<addressBookType> entryList;
-	entryList.print();
+	//orderedLinkedList<addressBookType> entryList;
+	//entryList.print();
 	string lastName;
 	string relation;
 	int birthmonth;

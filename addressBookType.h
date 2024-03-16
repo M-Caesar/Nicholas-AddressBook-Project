@@ -10,11 +10,11 @@
 #include <string>
 using namespace std;
 
-//template <class extPersonType>
+//template <class Type>
 class addressBookType : public orderedLinkedList<extPersonType>
 {
 private:
-	orderedLinkedList addressLList;
+	orderedLinkedList<extPersonType> addressLList;
 	extPersonType addressList[500];
 	int length = 0;
 	int maxLength = 500;
@@ -54,7 +54,8 @@ public:
 	function of each extPersonType object
 	Precondition: Array has been itterated with desired entires
 	Postcondition: Prints out entires from the array*/
-	void print();
+	//template <class Type>
+	void print() const;
 
 	/*This function sorts the list using lastName field as the sort key so that the list will be printed in alphabetical order by last name.
 	Precondition: Array has been itterated with desired entries
@@ -65,4 +66,6 @@ public:
 
 	void removePerson(extPersonType remEntry);
 
+	friend ostream& operator<<(ostream&, const orderedLinkedList&);
+	friend ostream& operator<<(ostream&, const extPersonType&);
 };

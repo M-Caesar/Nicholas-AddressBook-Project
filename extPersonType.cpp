@@ -46,7 +46,7 @@ extPersonType::extPersonType(string fname, string lname, int nmonth, int nday, i
 
 bool extPersonType::operator==(extPersonType othereq)
 {
-	return (lastName == othereq.lastName && this->getFirstName() == othereq.getFirstName());
+	return (this->getLastName() == othereq.getLastName() && this->getFirstName() == othereq.getFirstName());
 }
 
 bool extPersonType::operator!=(extPersonType othernot)
