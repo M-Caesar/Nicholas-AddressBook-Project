@@ -1,8 +1,8 @@
 Nicholas Augustus
 12-16-1998
-123FairyLn
-NewportNews MA, 12345
-123-456-7890
+712VillageGreenPkwy
+NewportNews VA, 23456
+757-329-2290
 Family
 Brave Balto
 2-6-1975
@@ -15,6 +15,12 @@ Bash Bashfull
 Long Road
 New York NY, 10000
 212-782-8000
+Friend
+Donald Duck
+10-6-1980
+Disney Street
+Orlando FL, 11234
+622-873-8920
 Friend
 Goof Goofy
 2-6-1965

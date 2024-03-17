@@ -38,13 +38,19 @@ public:
     //Postcondition: All stored information is printed correctly
     void print();
 
+    /*Overload of the == operator
+    * Precondition: None
+    * Postcondition: None */
     bool operator==(extPersonType othereq);
+    /*Overload of the != operator
+    * Precondition: None
+    * Postcondition: None */
     bool operator!=(extPersonType othernot);
+    /*Overload of the >= operator
+    * Precondition: None
+    * Postcondition: None */
     bool operator>=(extPersonType otherless);
    // friend ostream& operator<<(ostream&, const extPersonType&);
-
-
-
 
     //Constructor
     //Precondition: Contructor for extPersonType. Accepts client arguments and passes them to appropriate constructors in other classes 

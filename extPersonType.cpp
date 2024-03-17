@@ -42,18 +42,19 @@ extPersonType::extPersonType(string fname, string lname, int nmonth, int nday, i
 	relationship = rship;
 }
 
-//need to look up how to implement a key
-
+//Operator overload for ==
 bool extPersonType::operator==(extPersonType othereq)
 {
 	return (this->getLastName() == othereq.getLastName() && this->getFirstName() == othereq.getFirstName());
 }
 
+//Operator overload for !=
 bool extPersonType::operator!=(extPersonType othernot)
 {
 	return !(*this == othernot);
 }
 
+//Operator overload for >=
 bool extPersonType::operator>=(extPersonType otherless)
 {
 	return ((this->getLastName() > otherless.getLastName()) ||
@@ -61,17 +62,3 @@ bool extPersonType::operator>=(extPersonType otherless)
 			this->getFirstName() >= otherless.getFirstName()));
 }
 
-/*
-template <class Type>
-ostream& operator<<(ostream& osObject, const orderedLinkedList<Type>& list)
-{
-	nodeType<Type>* current = list.first;
-	while (current != nullptr)
-	{
-		osObject << current->info << " ";
-		current = current->link;
-	}
-	//osObject << extPerson << endl;
-	return osObject;
-}
-*/

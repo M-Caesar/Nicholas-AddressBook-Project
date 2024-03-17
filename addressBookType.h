@@ -10,14 +10,9 @@
 #include <string>
 using namespace std;
 
-//template <class Type>
 class addressBookType : public orderedLinkedList<extPersonType>
 {
 private:
-	//orderedLinkedList<extPersonType> addressLList;
-	//extPersonType addressList[500];
-	//int length = 0;
-	//int maxLength = 500;
 
 public:
 
@@ -58,15 +53,18 @@ public:
 	//template <class Type>
 	void print() const;
 
-	/*This function sorts the list using lastName field as the sort key so that the list will be printed in alphabetical order by last name.
-	Precondition: Array has been itterated with desired entries
-	Postcondition: Sorts entries alphabetically in the array*/
-	// Function not needed void sortEntries();
-
+	/*This Function takes input from the user in order to create a new entry in the address Book
+	Precondition: extPersonType constructor works and addEntry function works
+	Postcondition: A new entry is added to the address book*/
 	void inputPerson();
 
+	/*This function removes an extPersonType entry from the address book linked list using the patient first and last names
+	Precondition:: There is an entry to be removed
+	Postcondition: Entry is removed from the linked list*/
 	void removePerson(string, string);
 
+	/*This function saves the address book linked list to the .txt file used to intake information
+	Precondition: The .txt file for entry is able to be accessed and read from and written to
+	Postcondition: .txt file is successfully saved to */
 	void saveFile(string);
-	//friend ostream& operator<<(ostream&, const extPersonType&);
 };

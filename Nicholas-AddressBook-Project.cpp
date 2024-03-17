@@ -7,10 +7,6 @@ using namespace std;
 int showMenu(addressBookType menuadd)
 	{
 		int choice;
-		//string lastName;
-		//string relation;
-		//int birthmonth;
-		//test
 		cout << "~~~~~~~~~~~~~~~~~Main Menu~~~~~~~~~~~~~~~" << endl << "Please enter a choice:" << endl;
 		cout << "Choice 1: Find Person" << endl;
 		cout << "Choice 2: Find Birth Month" << endl;
@@ -28,15 +24,11 @@ int showMenu(addressBookType menuadd)
 int main()
 {
 	addressBookType test;
-	//orderedLinkedList<addressBookType> test;
 	string file;
 	cout << "Please enter a file to read: ";
 	cin >> file;
 	test.initEntry(file);
-	//test.sortEntries();
 	cout << "Entries printed in alphabetical order: " << endl;
-	//orderedLinkedList<addressBookType> entryList;
-	//entryList.print();
 	string firstName;
 	string lastName;
 	string relation;
