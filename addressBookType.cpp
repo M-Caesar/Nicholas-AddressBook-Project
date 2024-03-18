@@ -130,10 +130,24 @@ void addressBookType::inputPerson()
 	cin >> firstName;
 	cout << "Please input last name" << endl;
 	cin >> lastName;
-	cout << "Please input their birth month, day and year" << endl;
-	cin >> month >> day >> year;
-	cout << "Please input address, then city, then state, then zip code" << endl;
-	cin >> address >> city >> state >> zip;
+	cout << "Please input their birth month" << endl;
+	cin >> month;
+	cout << "Please input their birth day" << endl;
+	cin >> day;
+	cout << "Please input their birth year" << endl;
+	cin >> year;
+	cin.ignore();
+	cout << "Please input address" << endl;
+	//cin >> address;
+	getline(cin, address);
+	//cin.ignore();
+	cout << "Please input their city" << endl;
+	//cin >> city;
+	getline(cin, city);
+	cout << "Please input their state accronym" << endl;
+	cin >> state;
+	cout << "Please input  their zip code" << endl;
+	cin >> zip;
 	cout << "Please input phone number in form XXX-XXX-XXXX" << endl;
 	cin >> phone;
 	cout << "Please input relation to contact" << endl;
@@ -172,7 +186,7 @@ void addressBookType::saveFile(string filename)
 
 	ofstream outFile(filename);
 	extPersonType printPerson;
-	int iter = 0;
+	int firstiter = 0;
 
 	if (!outFile.is_open())
 	{
@@ -183,19 +197,26 @@ void addressBookType::saveFile(string filename)
 	nodeType<extPersonType>* current = first;
 	while (current != nullptr)
 	{
-		current->info.print();
+		/*current->info.print();
 		std::streambuf* cout_buf = std::cout.rdbuf();
 		std::cout.rdbuf(outFile.rdbuf());
 		current->info.print();
-		std::cout.rdbuf(cout_buf);
+		std::cout.rdbuf(cout_buf);*/
 
-		//outFile << "This is the Birth Month" << endl;
-		//outFile << current->info.getBirthMonth();
-		//outFile << 
+		outFile << current->info.getFirstName() << " " << current->info.getLastName() << endl;
+		outFile << current->info.getBirthMonth() << " " << current->info.getBirthDay() << " " << current->info.getBirthYear() << endl;
+		outFile << current->info.getAddress() << endl;
+		outFile << current->info.getCity() << endl;
+		outFile << current->info.getState() << endl;
+		outFile << current->info.getZip() << endl;
+		outFile << current->info.getPhoneNumber() << endl;
+		outFile << current->info.getRelationship() << endl;
+		printPerson = current->info;
 
 		current = current->link;
-		iter++;
+		firstiter++;
 	}
 	outFile.close();
+
 	return;
 }

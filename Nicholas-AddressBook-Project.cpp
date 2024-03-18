@@ -24,6 +24,7 @@ int showMenu(addressBookType menuadd)
 int main()
 {
 	addressBookType test;
+
 	string file;
 	cout << "Please enter a file to read: ";
 	cin >> file;
@@ -81,14 +82,14 @@ int main()
 		case 7:
 			cout << " You've chosen Choice 7: Save" << endl;
 			cout << "Enter a file that you would like to save to" << endl;
-			cin >> filename;
-			test.saveFile(filename);
+			//cin >> filename;
+			test.saveFile(file);
 			cout << "File saved!" << endl;
 			break;
 
 		case 8:
 			cout << " You've chosen Choice 8: " << endl;
-			test.saveFile("TestBook.txt");
+			test.saveFile(file);
 			break;
 
 		default:

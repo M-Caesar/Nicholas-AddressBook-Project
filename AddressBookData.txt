@@ -1,34 +1,18 @@
-Shelly Malik
-12 8 2000
-Lincoln Drive
-Omaha
-NE
-68131
-402-555-1212
-Family
-Donald Duck
-10 6 1980
-Disney Street
-Orlando
-FL
-11234
-622-873-8920
+Manolo Anleu
+9 20 1998
+555 Cera Court
+Richmond
+VA
+23523
+757-099-8271
 Friend
-Chelsea Tomak
-12 8 1999
-Kennedy Blvd
-Omaha
-NE
-68172
-402-777-8888
-Friend
-Goof Goofy
-2 6 1965
-Disney Street
-Los Angles
-CA
-91340
-215-782-9000
+Nick Augustus
+12 16 1998
+712 Village Green Parkway
+Newport News
+VA
+23602
+757-329-2290
 Family
 Brave Balto
 2 6 1975
@@ -43,6 +27,46 @@ Bash Bashfull
 Long Road
 New York
 NY
-01101
+10000
 212-782-8000
+Friend
+Donald Duck
+10 6 1980
+Disney Street
+Orlando
+FL
+11234
+622-873-8920
+Friend
+Goof Goofy
+2 6 1965
+Disney Street
+Los Angles
+CA
+91340
+215-782-9000
+Family
+Clem Hidalgo
+11 7 1998
+123 League Lane
+Newport News
+VA
+12345
+757-321-8929
+Friend
+Shelly Malik
+12 8 2000
+Lincoln Drive
+Omaha
+NE
+68131
+402-555-1212
+Family
+Chelsea Tomak
+12 8 1999
+Kennedy Blvd
+Omaha
+NE
+68172
+402-777-8888
 Friend

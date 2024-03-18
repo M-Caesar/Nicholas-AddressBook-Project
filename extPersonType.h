@@ -30,8 +30,14 @@ public:
 
     //Getters
     string getPhoneNumber() { return phoneNumber;}
+    string getAddress() { return address.getAddress(); }
+    string getCity() { return address.getCity(); }
+    string getState() { return address.getState(); }
+    int getZip() { return address.getZipcode(); }
     string getRelationship() { return relationship; }
     int getBirthMonth() { return birthdate.getMonth(); } 
+    int getBirthDay() { return birthdate.getDay(); }
+    int getBirthYear() { return birthdate.getYear(); }
 
     //Print function for extPersonType
     //Precondition: print functions for addressType, dateType and personType are all functional and are called in this function
